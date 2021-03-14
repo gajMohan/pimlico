@@ -1,11 +1,16 @@
 import Head from "next/head";
 
 export default function Home(props) {
+  console.log(props);
   return (
     <section class="text-gray-700 body-font">
       <Head>
         <title>{props.personal.name.short}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HKMRNQH6G5"
+        ></script>
       </Head>
       <div class="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
         <div class="w-5/6 mb-10 lg:max-w-lg lg:w-full md:w-1/2 md:mb-0">

@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 export default function Home() {
   const links = [
     {
@@ -18,6 +20,10 @@ export default function Home() {
   ];
   return (
     <section class="text-gray-700 body-font">
+      <Head>
+        <title>Gaj Mohan</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div class="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
         <div class="w-5/6 mb-10 lg:max-w-lg lg:w-full md:w-1/2 md:mb-0">
           <img
@@ -27,15 +33,20 @@ export default function Home() {
           />
         </div>
         <div class="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
-          <div class="flex flex-wrap -mx-4 -mt-4 -mb-10 sm:-m-4 ">
-            <div class="container flex flex-col mx-auto w-full items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow">
-              <ul class="flex flex-col divide divide-y">
-                {links.map((link) => {
-                  return (
-                    <Link type={link.type} name={link.name} url={link.url} />
-                  );
-                })}
-              </ul>
+          <div class="">
+            <div class="text-center">
+              <p class="text-2xl text-gray-800 dark:text-white">Gaj Mohan</p>
+              <p class="text-xl text-gray-500 dark:text-gray-200 font-light">
+                London
+              </p>
+              <p class="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
+                Senior Backend Engineer, Football fanatic, Full time geek
+              </p>
+            </div>
+            <div class="pt-8 flex border-t border-gray-200 w-44 mx-auto text-gray-500 items-center justify-between">
+              {links.map((link) => {
+                return <Link type={link.type} url={link.url} />;
+              })}
             </div>
           </div>
         </div>
@@ -44,23 +55,14 @@ export default function Home() {
   );
 }
 
-const Link = ({ type, name, url }) => {
+const Link = ({ type, url }) => {
   return (
-    <li class="flex flex-row">
-      <a href={url} class="block relative" target="_blank">
-        <div class="select-none cursor-pointer flex flex-1 items-center p-4">
-          <div class="flex flex-col w-10 h-10 justify-center items-center mr-4">
-            <img
-              alt="profil"
-              src={"/icons/" + type + ".svg"}
-              class="mx-auto object-cover rounded-full h-10 w-10 "
-            />
-          </div>
-          <div class="flex-1 pl-1 mr-16">
-            <div class="font-medium dark:text-white">{name}</div>
-          </div>
-        </div>
-      </a>
-    </li>
+    <a href={url}>
+      <img
+        alt="profil"
+        src={"/icons/" + type + ".svg"}
+        class="mx-auto object-cover rounded-full h-10 w-10 "
+      />
+    </a>
   );
 };

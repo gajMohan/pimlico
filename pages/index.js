@@ -1,27 +1,10 @@
 import Head from "next/head";
 
-export default function Home() {
-  const links = [
-    {
-      type: "twitter",
-      name: "@inspectorgajit",
-      url: "https://twitter.com/Inspectorgajit",
-    },
-    {
-      type: "linkedin",
-      name: "Inspectorgajit",
-      url: "https://twitter.com/Inspectorgajit",
-    },
-    {
-      type: "github",
-      name: "Github",
-      url: "https://twitter.com/Inspectorgajit",
-    },
-  ];
+export default function Home(props) {
   return (
     <section class="text-gray-700 body-font">
       <Head>
-        <title>Gaj Mohan</title>
+        <title>{props.personal.name.short}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div class="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
@@ -37,14 +20,14 @@ export default function Home() {
             <div class="text-center">
               <p class="text-2xl text-gray-800 dark:text-white">Gaj Mohan</p>
               <p class="text-xl text-gray-500 dark:text-gray-200 font-light">
-                London
+                {props.personal.location}
               </p>
               <p class="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
-                Senior Backend Engineer, Football fanatic, Full time geek
+                {props.personal.description}
               </p>
             </div>
             <div class="pt-8 flex border-t border-gray-200 w-44 mx-auto text-gray-500 items-center justify-between">
-              {links.map((link) => {
+              {props.personal.links.map((link) => {
                 return <Link type={link.type} url={link.url} />;
               })}
             </div>
@@ -66,3 +49,24 @@ const Link = ({ type, url }) => {
     </a>
   );
 };
+
+async function fetchData() {
+  const res = await fetch(`https://data.gajmohan.dev/personal.json`);
+
+  const json = await res.json();
+  if (json.errors) {
+    console.error(json.errors);
+    throw new Error("Failed to fetch API");
+  }
+
+  return json;
+}
+
+export async function getStaticProps({ params }) {
+  const personal = await fetchData();
+  return {
+    props: {
+      personal,
+    },
+  };
+}

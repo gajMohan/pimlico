@@ -23,7 +23,9 @@ export default function Home(props) {
         <div class="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
           <div class="">
             <div class="text-center">
-              <p class="text-2xl text-gray-800 dark:text-white">Gaj Mohan</p>
+              <p class="text-2xl text-gray-800 dark:text-white">
+                {props.personal.name.short}
+              </p>
               <p class="text-xl text-gray-500 dark:text-gray-200 font-light">
                 {props.personal.location}
               </p>

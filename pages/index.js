@@ -1,6 +1,20 @@
 import Head from "next/head";
 
 export default function Home(props) {
+  let msg =
+    "%c Hi 👋🏾! Welcome to my site! \n" +
+    JSON.stringify(props.personal, null, 1);
+  let styles = [
+    "font-size: 12px",
+    "font-family: monospace",
+    "background: white",
+    "display: inline-block",
+    "color: black",
+    "padding: 8px 19px",
+    "border: 1px dashed;",
+  ].join(";");
+  console.log(msg, styles);
+
   return (
     <section className="text-gray-700 body-font">
       <Head>

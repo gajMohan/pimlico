@@ -38,4 +38,3 @@ _static
 
 #lock files
 yarn.lock
-package-lock.json

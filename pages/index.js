@@ -34,18 +34,23 @@ export default function Home(props) {
         <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
           <div className="">
             <div className="text-center">
-              <p className="text-2xl text-gray-800 dark:text-white">
-                {props.personal.name.short}
-                <p
-                  className="text-sm dark:text-gray-200 font-light"
-                  itemprop="name"
-                >
-                  {props.personal.name.firstName} {props.personal.name.lastName}
+              <div>
+                <p className="text-2xl text-gray-800 dark:text-white">
+                  {props.personal.name.short}
+                  <p
+                    className="text-sm text-gray-500 dark:text-gray-400 font-light"
+                    itemprop="name"
+                  >
+                    {props.personal.name.firstName}{" "}
+                    {props.personal.name.lastName}
+                  </p>
                 </p>
-              </p>
-              <p className="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
-                {props.personal.description}
-              </p>
+              </div>
+              <div>
+                <p className="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
+                  {props.personal.description}
+                </p>
+              </div>
               <p className="text-xl text-gray-500 dark:text-gray-200 font-light">
                 <FontAwesomeIcon icon={faMapMarker} /> {props.personal.location}
               </p>

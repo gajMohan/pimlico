@@ -4,6 +4,7 @@ import {
   faGithub,
   faTwitter,
   faLinkedin,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -79,6 +80,7 @@ const Link = ({ type, url }) => {
       {type == "github" && <FontAwesomeIcon icon={faGithub} />}
       {type == "twitter" && <FontAwesomeIcon icon={faTwitter} />}
       {type == "linkedin" && <FontAwesomeIcon icon={faLinkedin} />}
+      {type == "instagram" && <FontAwesomeIcon icon={faInstagram} />}
     </a>
   );
 };

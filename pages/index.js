@@ -1,5 +1,10 @@
 import Head from "next/head";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home(props) {
@@ -70,12 +75,10 @@ export default function Home(props) {
 
 const Link = ({ type, url }) => {
   return (
-    <a href={url}>
-      <img
-        alt="profil"
-        src={"/icons/" + type + ".svg"}
-        className="mx-auto object-cover rounded-full h-10 w-10 "
-      />
+    <a href={url} className="text-4xl">
+      {type == "github" && <FontAwesomeIcon icon={faGithub} />}
+      {type == "twitter" && <FontAwesomeIcon icon={faTwitter} />}
+      {type == "linkedin" && <FontAwesomeIcon icon={faLinkedin} />}
     </a>
   );
 };

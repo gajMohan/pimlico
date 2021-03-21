@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home(props) {
   let msg =
@@ -34,13 +36,20 @@ export default function Home(props) {
             <div className="text-center">
               <p className="text-2xl text-gray-800 dark:text-white">
                 {props.personal.name.short}
-              </p>
-              <p className="text-xl text-gray-500 dark:text-gray-200 font-light">
-                {props.personal.location}
+                <p
+                  className="text-sm dark:text-gray-200 font-light"
+                  itemprop="name"
+                >
+                  {props.personal.name.firstName} {props.personal.name.lastName}
+                </p>
               </p>
               <p className="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
                 {props.personal.description}
               </p>
+              <p className="text-xl text-gray-500 dark:text-gray-200 font-light">
+                <FontAwesomeIcon icon={faMapMarker} /> {props.personal.location}
+              </p>
+              <br />
             </div>
             <div className="pt-8 flex border-t border-gray-200 w-44 mx-auto text-gray-500 items-center justify-between">
               {props.personal.links.map((link) => {

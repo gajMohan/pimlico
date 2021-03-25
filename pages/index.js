@@ -46,7 +46,7 @@ export default function Home(props) {
                   {props.personal.name.short}
                   <p
                     className="text-sm text-gray-500 dark:text-gray-400 font-light"
-                    itemprop="name"
+                    itemProp="name"
                   >
                     {props.personal.name.firstName}{" "}
                     {props.personal.name.lastName}
@@ -77,7 +77,7 @@ export default function Home(props) {
 
 const Link = ({ type, url }) => {
   return (
-    <a href={url} className="text-4xl">
+    <a href={url} className="text-4xl" rel="me">
       {type == "github" && <FontAwesomeIcon icon={faGithub} />}
       {type == "twitter" && <FontAwesomeIcon icon={faTwitter} />}
       {type == "linkedin" && <FontAwesomeIcon icon={faLinkedin} />}

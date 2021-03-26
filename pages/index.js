@@ -26,9 +26,12 @@ export default function Home(props) {
   return (
     <section className="text-gray-700 body-font">
       <Head>
-        <title>{props.personal.name.short}</title>
+        <title>
+          {props.personal.name.short} ({props.personal.name.firstName}{" "}
+          {props.personal.name.lastName})
+        </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={props.personal.description} />
+        <meta name="description" content={props.personal.bio} />
       </Head>
       <div className="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
         <div className="w-5/6 mb-10 lg:max-w-lg lg:w-full md:w-1/2 md:mb-0">
@@ -55,7 +58,7 @@ export default function Home(props) {
               </div>
               <div>
                 <p className="text-md text-gray-500 dark:text-gray-400 max-w-xs py-4 font-light">
-                  {props.personal.description}
+                  {props.personal.bio}
                 </p>
               </div>
               <p className="text-xl text-gray-500 dark:text-gray-200 font-light">

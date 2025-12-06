@@ -5,7 +5,7 @@ export default function handler(req, res) {
       firstName: 'Gajalakshan',
       lastName: 'Mohankumar',
     },
-    location: 'London',
+    location: 'Surrey',
     bio: 'Principle software Engineer, Football fanatic, Full time geek',
     website: 'https://www.gajmohan.dev',
     image: '/img/gaj_mohan.jpg',

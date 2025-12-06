@@ -6,15 +6,10 @@ export default function handler(req, res) {
       lastName: 'Mohankumar',
     },
     location: 'London',
-    bio: 'Senior Backend Engineer, Football fanatic, Full time geek',
+    bio: 'Principle software Engineer, Football fanatic, Full time geek',
     website: 'https://www.gajmohan.dev',
     image: '/img/gaj_mohan.jpg',
     links: [
-      {
-        type: 'twitter',
-        name: '@inspectorgajit',
-        url: 'https://twitter.com/Inspectorgajit',
-      },
       {
         type: 'linkedin',
         name: 'Gajalakshan Mohankumar',
